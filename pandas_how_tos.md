@@ -1,0 +1,8 @@
+## Common How-Tos in Pandas/Matplotlib
+
+| Sr. No. | How To .. | Code | Comments |
+| :-- | :-- | :-- | :-- |
+| 1. | remove an element from list (inplace) | list1.remove('v2') | list1 = ['v1', 'v2', 'v3'] |
+| 2. | find total total data-points in each category in a column | data['column-name'].value_counts() | |
+| 3. | see summary stats of numerical columns in dataframe | data.describe() | to see summary stats of specific set of columns: data[columns-list].describe() |
+| 4. | convert all column names to lowercase | data.columns = data.columns.str.lower() | |
