@@ -9,3 +9,6 @@
 | 5. | extract date component from date-time values | data['date_column'].date() | |
 | 6. | extract number of days from values like <code>[datetime.timedelta(days=663), datetime.timedelta(days=113)]</code> | data['date_column'].dt.days | |
 | 7. | extract "year" from a date value | date.year | e.g. date1 = '2024-03-24'; date1.year gives 2024| |
+| 8. | find xth percentile in a column | data['column_name'].quantile(0.99) | gives 99th percentile; |
+| 9. | get column-names that "start" with a pattern | data.columns[data.columns.str.startswith('pattern')].tolist() |If <code>.tolist()</code> isn't used, it returns a Pandas Index object which looks like a Py list but is not really a list.|
+| 10. | get column-names which "contain" a pattern | data.columns[data.columns.str.contain('pattern')].tolist() | |
