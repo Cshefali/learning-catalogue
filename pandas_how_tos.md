@@ -16,5 +16,8 @@
 | 12. | add values row-wise in selected columns and store in a new column| data['new_column'] = data[columns].sum(axis=1)| axis=1 means "sum across columns for each row" |
 | 13. | replace values in a column with another value | data['column-name'] = data['column-name'].replace({'old-value1':'new-value1', 'old-value2':'new-value2'}) |
 | 14. | rename columns | data = data.rename(columns = {'oldname: newname', 'old-name2':'new-name2'}) | |
-| 15. | 
+| 15. | to see all columns of type object | s = (data.dtypes == 'object'); list(s[s].index) | The 2nd line returns the names of all columns |
+| 16. | sort each category in correct numeric/alphabetic order | <code>.sort_index()</cpde> | E.g. data['cat_type'].value_counts().sort_index() arranges category names alphabetically|
+
+
 
