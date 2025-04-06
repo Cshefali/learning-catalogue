@@ -18,6 +18,7 @@
 | 14. | rename columns | data = data.rename(columns = {'oldname: newname', 'old-name2':'new-name2'}) | |
 | 15. | to see all columns of type object | s = (data.dtypes == 'object'); list(s[s].index) | The 2nd line returns the names of all columns |
 | 16. | sort each category in correct numeric/alphabetic order | <code>.sort_index()</cpde> | E.g. data['cat_type'].value_counts().sort_index() arranges category names alphabetically|
+| 17. | clean column-names, remove special chars, spaces, convert to lowercase | data.columns = [re.sub('\W+', '_', col.lower()).strip('_') for col in data.columns] | "\W+" is regex pattern for all non-alphanumeric characters. all chars except [a-z][A-Z][0-9] and '_'|
 
 
 
