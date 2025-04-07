@@ -19,6 +19,9 @@
 | 15. | to see all columns of type object | s = (data.dtypes == 'object'); list(s[s].index) | The 2nd line returns the names of all columns |
 | 16. | sort each category in correct numeric/alphabetic order | <code>.sort_index()</cpde> | E.g. data['cat_type'].value_counts().sort_index() arranges category names alphabetically|
 | 17. | clean column-names, remove special chars, spaces, convert to lowercase | data.columns = [re.sub('\W+', '_', col.lower()).strip('_') for col in data.columns] | "\W+" is regex pattern for all non-alphanumeric characters. all chars except [a-z][A-Z][0-9] and '_'|
+| 18. | create list of all column names excluding one column | columns = [col for col in data.columns if col != 'specific_column'] | replace "specific_column" with desired colname.|
+| 19. | extract all unique alphabets in a column from all rows. | data.col_name.str.extractall(r'([A-Za-z])')[0] |
+| 20. | check if all values follow a pattern or not | data.col_name.fullmatch(r'A-Z\d{4}').all() | checks if all values start with capital letter, followed by 4 digits. Useful for user-id kinda columns.|
 
 
 
