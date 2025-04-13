@@ -22,6 +22,7 @@
 | 18. | create list of all column names excluding one column | columns = [col for col in data.columns if col != 'specific_column'] | replace "specific_column" with desired colname.|
 | 19. | extract all unique alphabets in a column from all rows. | data.col_name.str.extractall(r'([A-Za-z])')[0] |
 | 20. | check if all values follow a pattern or not | data.col_name.fullmatch(r'A-Z\d{4}').all() | checks if all values start with capital letter, followed by 4 digits. Useful for user-id kinda columns.|
+| 21. | join one-hot encoded columns to original df | data2 = data.join(pd.get_dummies(data[selected_cols], dtype='int')) | `dtype=int` makes sure values in encoded cols are 0/1 instead of False/True |
 
 
 
