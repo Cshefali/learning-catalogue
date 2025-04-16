@@ -23,6 +23,12 @@
 | 19. | extract all unique alphabets in a column from all rows. | data.col_name.str.extractall(r'([A-Za-z])')[0] |
 | 20. | check if all values follow a pattern or not | data.col_name.fullmatch(r'A-Z\d{4}').all() | checks if all values start with capital letter, followed by 4 digits. Useful for user-id kinda columns.|
 | 21. | join one-hot encoded columns to original df | data2 = data.join(pd.get_dummies(data[selected_cols], dtype='int')) | `dtype=int` makes sure values in encoded cols are 0/1 instead of False/True |
+| 22. | sort unique values in a column in correct order | np.sort(data['Year'].unique()) | -- |
+| 23. | find total duplicate rows | data.duplicated().sum() | -- |
+| 24. | print all unique values in one column, for each value in another column | data.groupby('Continent')['Country'].unique() | prints all countries per Continent in the dataframe |
+| 25. | sort a list with values | sorted(list-name) | -- |
+| 26. | sort a pandas column values (Series) | data['colname'].unique().sort() | |
+| 27. | sort a dataframe based on a column | data.sort_values(by='column-name') | |
 
 
 
