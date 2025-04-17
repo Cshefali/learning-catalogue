@@ -29,6 +29,7 @@
 | 25. | sort a list with values | sorted(list-name) | -- |
 | 26. | sort a pandas column values (Series) | data['colname'].unique().sort() | |
 | 27. | sort a dataframe based on a column | data.sort_values(by='column-name') | |
+| 28. | filter out specific rows when a column doesn't match some pattern | <code>data[~data['col-name'].str.match(r'regex-pattern',na=False)]</code> | this will return all rows in which col-name doesnt match given regex pattern. |
 
 
 
