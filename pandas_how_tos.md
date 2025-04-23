@@ -30,6 +30,9 @@
 | 26. | sort a pandas column values (Series) | data['colname'].unique().sort() | |
 | 27. | sort a dataframe based on a column | data.sort_values(by='column-name') | |
 | 28. | filter out specific rows when a column doesn't match some pattern | <code>data[~data['col-name'].str.match(r'regex-pattern',na=False)]</code> | this will return all rows in which col-name doesnt match given regex pattern. |
+| 29. | filter out rows and columns based on multiple conditions | data.loc[(data['col1'] == 'abc') & (data['col2'] == 23) & (data['col3'].isna()), 'rating'] = 3.0 | That ".loc" part is important |
+| 30. | filter out only rows with NA in a column | <code>data[data['col7'].isna()]</code> OR data[~data['col7'].notna()] | Both work. |
+| 31. | group-by one column, count values of another | </code>data.groupby('col1')['col2'].value_counts()</code> | -- |
 
 
 
