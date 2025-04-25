@@ -34,5 +34,7 @@
 | 30. | filter out only rows with NA in a column | <code>data[data['col7'].isna()]</code> OR data[~data['col7'].notna()] | Both work. |
 | 31. | group-by one column, count values of another | </code>data.groupby('col1')['col2'].value_counts()</code> | -- |
 | 32. | perform a check across a given set of columns | <code>data2[(data2[columns-list] < 0).all(axis=1)]</code> | .all() checks across all columns, .any() returns if any of the columns contain -ve value.|
-
+| 33. | delete a row based on row-index | <code>data.drop(23, inplace=True)</code> | deletes row 23; inplace = True ensures row gets deleted in same df without having to create new dataframe|
+| 34. | delete rows based on condition | <code>data2 = data[(data['col1'].notna()) & (data['col2']>0)]</code> | Make sure each condition is within () |
+| 35. | 
 
