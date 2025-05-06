@@ -38,3 +38,6 @@
 | 34. | delete rows based on condition | <code>data2 = data[(data['col1'].notna()) & (data['col2']>0)]</code> | Make sure each condition is within () |
 | 35. | convert the output of <code>.value_counts()</code> to a pd dataframe | <code>temp = pd.DataFrame(data['colname'].value_counts()).reset_index()</code> | <code>.reset_index()</code> makes sure values in "colname" form a column instead of row labels.|
 | 36. | round off outcome of division of series | <code>(df['count']/df['count'].sum()).round(2)</code> | .round(2) function works on series, round(..., 2) works on numpy values |
+| 37. | sort values in one or more columns in df | <code>df = df.sort_values(['city', 'rating'], ascending=['True', 'False'])</code> | arranges animal name in alphabetical order, count in descending order. For e.g. to get best rated outlets per city, arrange city in ascending, but ratings in descending so that we get highest-rated outlet names first|
+| 38. | extract top n (any number) values from each group | top5 = df.groupby('col-name').head(5) | the columns should be pre-arranged in correct descending/ascending order as per need.|
+
