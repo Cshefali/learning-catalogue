@@ -40,4 +40,6 @@
 | 36. | round off outcome of division of series | <code>(df['count']/df['count'].sum()).round(2)</code> | .round(2) function works on series, round(..., 2) works on numpy values |
 | 37. | sort values in one or more columns in df | <code>df = df.sort_values(['city', 'rating'], ascending=['True', 'False'])</code> | arranges animal name in alphabetical order, count in descending order. For e.g. to get best rated outlets per city, arrange city in ascending, but ratings in descending so that we get highest-rated outlet names first|
 | 38. | extract top n (any number) values from each group | top5 = df.groupby('col-name').head(5) | the columns should be pre-arranged in correct descending/ascending order as per need.|
-
+| 39. | group-by columns and then find mode for another column | <code>data.groupby('col1')['col2'].apply(lambda x:x.mode())</code> | simply adding .mode() wont work.|
+| 40. | group-by columns & then find mean/median for another columns | <code>data.groupby('col1')['col2'].mean()</code> | use .median() for median value. |
+| 41. | group-by a column and find median, mean and total number of those values in dataset | <code>data.groupby('food_name').agg(['mean', 'median', 'count']).reset_index()</code> | reset_index() converts the outcome to a PD dataframe.|
